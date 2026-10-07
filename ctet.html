@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CTET Mock Test - 30 प्रश्न</title>
+
+    <link rel="stylesheet" href="ctet.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header class="header">
+        <h1>CTET Mock Test</h1>
+        <p>केंद्रीय शिक्षक पात्रता परीक्षा - अभ्यास टेस्ट</p>
+    </header>
+
+    <!-- Test Info -->
+    <div class="test-info">
+
+        <div>
+            <strong>कुल प्रश्न</strong>
+            <span>30</span>
+        </div>
+
+        <div>
+            <strong>कुल अंक</strong>
+            <span>30</span>
+        </div>
+
+        <div>
+            <strong>समय</strong>
+            <span id="timer">30:00</span>
+        </div>
+
+    </div>
+
+    <!-- Main Test Area -->
+    <div id="testArea">
+
+        <div class="question-header">
+
+            <span>
+                प्रश्न <span id="questionNumber">1</span> / 30
+            </span>
+
+        </div>
+
+        <div class="question-box">
+
+            <h2 id="questionText">
+                प्रश्न यहाँ दिखाई देगा
+            </h2>
+
+            <div id="options"></div>
+
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+
+            <button id="previousBtn" onclick="previousQuestion()">
+                ← पिछला
+            </button>
+
+            <button id="nextBtn" onclick="nextQuestion()">
+                अगला →
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Question Palette -->
+    <div class="palette-container">
+
+        <h3>प्रश्न सूची</h3>
+
+        <div id="questionPalette"></div>
+
+    </div>
+
+    <!-- Submit -->
+    <button class="submit-btn" onclick="submitTest()">
+        परीक्षा समाप्त करें
+    </button>
+
+    <!-- Result -->
+    <div id="result" class="result hidden">
+
+        <h2>🎉 परीक्षा परिणाम</h2>
+
+        <div class="score">
+
+            <p>
+                आपका स्कोर:
+                <strong>
+                    <span id="score">0</span> / 30
+                </strong>
+            </p>
+
+            <p>
+                प्रतिशत:
+                <strong>
+                    <span id="percentage">0</span>%
+                </strong>
+            </p>
+
+            <p>
+                सही उत्तर:
+                <span id="correct">0</span>
+            </p>
+
+            <p>
+                गलत उत्तर:
+                <span id="wrong">0</span>
+            </p>
+
+            <p>
+                बिना उत्तर:
+                <span id="unanswered">0</span>
+            </p>
+
+            <h3 id="resultStatus"></h3>
+
+        </div>
+
+        <button class="restart-btn" onclick="restartTest()">
+            🔄 दोबारा टेस्ट दें
+        </button>
+
+    </div>
+
+</div>
+
+<script src="ctet.js"></script>
+
+<footer class="site-footer">
+
+    <h3>CTET Mock Test</h3>
+
+    <p>
+        Powered By <strong>Mr. Rajan</strong>
+    </p>
+
+    <p class="copyright">
+        © 2026 Mr. Rajan. All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>

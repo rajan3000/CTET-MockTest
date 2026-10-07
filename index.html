@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CTET Mock Test Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+        <div class="brand">
+            <div class="logo">CT</div>
+
+            <div>
+                <h1>CTET Mock Test</h1>
+                <p>Practice • Improve • Succeed</p>
+            </div>
+        </div>
+
+        <div class="profile">
+            <div class="profile-icon">R</div>
+
+            <div>
+                <strong>Student</strong>
+                <small>CTET Aspirant</small>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- ================= WELCOME ================= -->
+
+    <section class="welcome">
+
+        <div>
+
+            <p class="small-title">WELCOME BACK 👋</p>
+
+            <h2>CTET की तैयारी शुरू करें</h2>
+
+            <p>
+                अपनी तैयारी को बेहतर बनाएं और नियमित Mock Test देकर
+                अपना स्कोर सुधारें।
+            </p>
+
+            <button
+                class="start-btn"
+                onclick="startMockTest()">
+
+                ▶ Mock Test शुरू करें
+
+            </button>
+
+        </div>
+
+        <div class="welcome-icon">
+            📚
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">📝</div>
+
+            <div>
+                <span>कुल प्रश्न</span>
+                <strong>150</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">⏱️</div>
+
+            <div>
+                <span>कुल समय</span>
+                <strong>150 Min</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">🎯</div>
+
+            <div>
+                <span>Best Score</span>
+                <strong id="bestScore">0%</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon purple">🏆</div>
+
+            <div>
+                <span>Tests Completed</span>
+                <strong id="testsCompleted">0</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAIN GRID ================= -->
+
+    <div class="main-grid">
+
+
+        <!-- LEFT -->
+
+        <main>
+
+
+            <!-- Sections -->
+
+            <section class="section-box">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>CTET Sections</h2>
+                        <p>विषय के अनुसार अभ्यास करें</p>
+                    </div>
+
+                    <span>5 Sections</span>
+
+                </div>
+
+
+                <div class="subjects">
+
+
+                    <div class="subject-card">
+
+                        <div class="subject-icon blue-bg">
+                            🧠
+                        </div>
+
+                        <div class="subject-content">
+
+                            <h3>बाल विकास एवं शिक्षाशास्त्र</h3>
+
+                            <p>
+                                Child Development & Pedagogy
+                            </p>
+
+                            <div class="subject-info">
+                                <span>30 प्रश्न</span>
+                                <span>30 अंक</span>
+                            </div>
+
+                            <div class="progress">
+                                <div style="width:35%"></div>
+                            </div>
+
+                        </div>
+
+                        <button
+                            onclick="startSection('cdp')">
+
+                            Practice →
+
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="subject-card">
+
+                        <div class="subject-icon red-bg">
+                            अ
+                        </div>
+
+                        <div class="subject-content">
+
+                            <h3>भाषा-I: हिंदी</h3>
+
+                            <p>
+                                Language-I: Hindi
+                            </p>
+
+                            <div class="subject-info">
+                                <span>30 प्रश्न</span>
+                                <span>30 अंक</span>
+                            </div>
+
+                            <div class="progress">
+                                <div style="width:20%"></div>
+                            </div>
+
+                        </div>
+
+                        <button
+                            onclick="startSection('hindi')">
+
+                            Practice →
+
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="subject-card">
+
+                        <div class="subject-icon green-bg">
+                            A
+                        </div>
+
+                        <div class="subject-content">
+
+                            <h3>भाषा-II: English</h3>
+
+                            <p>
+                                Language-II: English
+                            </p>
+
+                            <div class="subject-info">
+                                <span>30 प्रश्न</span>
+                                <span>30 अंक</span>
+                            </div>
+
+                            <div class="progress">
+                                <div style="width:10%"></div>
+                            </div>
+
+                        </div>
+
+                        <button
+                            onclick="startSection('english')">
+
+                            Practice →
+
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="subject-card">
+
+                        <div class="subject-icon orange-bg">
+                            ∑
+                        </div>
+
+                        <div class="subject-content">
+
+                            <h3>गणित</h3>
+
+                            <p>
+                                Mathematics
+                            </p>
+
+                            <div class="subject-info">
+                                <span>30 प्रश्न</span>
+                                <span>30 अंक</span>
+                            </div>
+
+                            <div class="progress">
+                                <div style="width:45%"></div>
+                            </div>
+
+                        </div>
+
+                        <button
+                            onclick="startSection('math')">
+
+                            Practice →
+
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="subject-card">
+
+                        <div class="subject-icon purple-bg">
+                            🌱
+                        </div>
+
+                        <div class="subject-content">
+
+                            <h3>पर्यावरण अध्ययन</h3>
+
+                            <p>
+                                Environmental Studies
+                            </p>
+
+                            <div class="subject-info">
+                                <span>30 प्रश्न</span>
+                                <span>30 अंक</span>
+                            </div>
+
+                            <div class="progress">
+                                <div style="width:25%"></div>
+                            </div>
+
+                        </div>
+
+                        <button
+                            onclick="startSection('evs')">
+
+                            Practice →
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- RIGHT SIDEBAR -->
+
+        <aside>
+
+
+            <!-- Quick Test -->
+
+            <div class="side-card">
+
+                <h3>⚡ Quick Start</h3>
+
+                <p>
+                    बिना किसी तैयारी के Full Mock Test देकर
+                    अपना वर्तमान स्तर जांचें।
+                </p>
+
+                <button
+                    class="full-test"
+                    onclick="startMockTest()">
+
+                    Full Test – 150 Questions
+
+                </button>
+
+            </div>
+
+
+            <!-- Exam Pattern -->
+
+            <div class="side-card">
+
+                <h3>📋 Exam Pattern</h3>
+
+                <div class="pattern-row">
+                    <span>कुल प्रश्न</span>
+                    <strong>150</strong>
+                </div>
+
+                <div class="pattern-row">
+                    <span>कुल अंक</span>
+                    <strong>150</strong>
+                </div>
+
+                <div class="pattern-row">
+                    <span>समय</span>
+                    <strong>150 मिनट</strong>
+                </div>
+
+                <div class="pattern-row">
+                    <span>Negative Marking</span>
+                    <strong>नहीं</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Tips -->
+
+            <div class="side-card tips">
+
+                <h3>💡 Preparation Tips</h3>
+
+                <ul>
+
+                    <li>रोजाना कम से कम 30 प्रश्न हल करें।</li>
+
+                    <li>गलत प्रश्नों को दोबारा पढ़ें।</li>
+
+                    <li>समय सीमा के अंदर Test पूरा करें।</li>
+
+                    <li>हर सप्ताह Full Mock Test दें।</li>
+
+                </ul>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>CTET Mock Test</h3>
+
+        <p>
+            Powered By <strong>Mr. Rajan</strong>
+        </p>
+
+        <small>
+            © 2026 Mr. Rajan. All Rights Reserved.
+        </small>
+
+    </footer>
+
+</div>
+
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>
